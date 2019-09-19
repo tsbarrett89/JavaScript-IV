@@ -18,10 +18,10 @@ class Instructor extends Person{
         this.catchPhrase = instructorAttr.catchPhrase;
     }
     demo(subject){
-        return `Today we are learning ${subject}`
+        return `Today we are learning ${subject}.`
     }
     grade(Student, subject){
-        return `${Student.name} receives a perfect score on ${subject}`
+        return `${Student.name} receives a perfect score on ${subject}.`
     }
 }
 
@@ -36,10 +36,10 @@ class Student extends Person{
         return `${this.favSubjects.join(' and ')}`
     }
     PRAssignment(subject){
-        return `${this.name} has submitted a PR for ${subject}`
+        return `${this.name} has submitted a PR for ${subject}.`
     }
     sprintChallenge(subject){
-        `${this.name} has begun sprint challenge on ${subject}`
+        return `${this.name} has begun sprint challenge on ${subject}.`
     }
 }
 
@@ -53,7 +53,7 @@ class ProjectManagers extends Instructor{
         return `${this.name} announces to ${channel}, @channel standy times!`
     }
     debugsCode(Student, subject){
-        return `${this.name} debugs ${Student.name}'s code on ${subject}`
+        return `${this.name} debugs ${Student.name}'s code on ${subject}.`
     }
 }
 
@@ -73,8 +73,8 @@ const brayden = new Student({
     location: 'minors locations can not be shared',
     previousBackground: 'lego constructor',
     className: 'WEB200',
-    favSubjects: ['math', 'recess', 'lunch']
-    catchPhrase: 'When is recess?'
+    favSubjects: ['math', 'recess', 'lunch'],
+    catchPhrase: 'When is recess'
 })
 
 const peter = new ProjectManagers({
@@ -89,10 +89,10 @@ const peter = new ProjectManagers({
 })
 
 console.log(murphy.speak());
-console.log(murphy.demo(CSS));
-console.log(murphy.grade(brayden, html));
-console.log(brayden.listsSubjects);
-console.log(brayden.PRAssignment(javascript));
-console.log(brayden.sprintChallenge(javascript));
-console.log(peter.standUp(web200_peter));
-console.log(peter.debugsCode(brayden, html));
+console.log(murphy.demo('CSS'));
+console.log(murphy.grade(brayden, 'html'));
+console.log(brayden.listsSubjects());
+console.log(brayden.PRAssignment('javascript'));
+console.log(brayden.sprintChallenge('javascript'));
+console.log(peter.standUp('web200_peter'));
+console.log(peter.debugsCode(brayden, 'html'));
