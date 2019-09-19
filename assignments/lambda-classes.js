@@ -53,8 +53,46 @@ class ProjectManagers extends Instructor{
         return `${this.name} announces to ${channel}, @channel standy times!`
     }
     debugsCode(Student, subject){
-        return `${this.name} debugs {Student.name}'s code on ${subject}`
+        return `${this.name} debugs ${Student.name}'s code on ${subject}`
     }
 }
 
 
+const murphy = new Instructor({
+    name: 'Murphy',
+    age: 42,
+    location: 'Limerick',
+    specialty: 'react.js',
+    favLanguage: 'ECMAscript',
+    catchPhrase: 'Make sure to join your break-out room.'
+})
+
+const brayden = new Student({
+    name: 'Brayden',
+    age: 8,
+    location: 'minors locations can not be shared',
+    previousBackground: 'lego constructor',
+    className: 'WEB200',
+    favSubjects: ['math', 'recess', 'lunch']
+    catchPhrase: 'When is recess?'
+})
+
+const peter = new ProjectManagers({
+    name: 'Peter',
+    age: 27,
+    location: 'Santa Monica',
+    specialty: 'slack',
+    favLanguage: 'HTML',
+    catchPhrase: 'Make sure you know the basics',
+    gradClassName: 'Web23',
+    favInstructor: 'Wes Jonke'
+})
+
+console.log(murphy.speak());
+console.log(murphy.demo(CSS));
+console.log(murphy.grade(brayden, html));
+console.log(brayden.listsSubjects);
+console.log(brayden.PRAssignment(javascript));
+console.log(brayden.sprintChallenge(javascript));
+console.log(peter.standUp(web200_peter));
+console.log(peter.debugsCode(brayden, html));
